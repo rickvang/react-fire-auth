@@ -1,35 +1,45 @@
 import firebase from 'firebase'
+import { FIREBASE_SETTINGS } from './constants'
 
-firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
-  storageBucket: process.env.REACT_APP_FIREBASE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
-})
-
+firebase.initializeApp(FIREBASE_SETTINGS)
 
 export const ref = firebase.database().ref()
-export const auth = firebase.auth
-export const githubProvider = new firebase.auth.GithubAuthProvider()
-export const facebookProvider = new firebase.auth.FacebookAuthProvider()
-export const googleProvider = new firebase.auth.GoogleAuthProvider()
-export const twitterProvider = new firebase.auth.TwitterAuthProvider()
+const auth = firebase.auth()
 
-export const facebookAuth = () =>
-  auth().signInWithPopup(facebookProvider)
+export const Providers = {
+  github: new firebase.auth.GithubAuthProvider(),
+  google: new firebase.auth.GoogleAuthProvider(),
+  twitter: new firebase.auth.TwitterAuthProvider(),
+  facebook: new firebase.auth.FacebookAuthProvider(),
+}
 
-export const GitHubAuth = () =>
-  auth().signInWithPopup(githubProvider)
+export const EmailVerication = () =>
+  auth
+    .currentUser
+    .sendEmailVerification()
 
-export const GoogleAuth = () =>
-  auth().signInWithPopup(googleProvider)
+export const CreateAccount = (email, password) =>
+  auth.createUserWithEmailAndPassword(email, password)
 
-export const TwitterAuth = () =>
-  auth().signInWithPopup(twitterProvider)
+export const Authenticate = provider =>
+  auth.signInWithPopup(Providers[provider])
+
+export const LinkWith = provider =>
+  auth.currentUser
+    .linkWithPopup(Providers[provider])
+
+export const UnlinkFrom = provider =>
+  auth.currentUser
+    .unlink(provider)
+
+export const UserProviders = () =>
+  auth.currentUser.providerData
   
-export const authStateChanged = (cb) =>
-  auth().onAuthStateChanged(cb)
+export const AuthStateChanged = callback =>
+  auth.onAuthStateChanged(callback)
 
-export const logout = () =>
-  auth().signOut()
+export const isAuthencated = () =>
+  AuthStateChanged(user => user || false)
+
+export const Logout = () =>
+  auth.signOut()

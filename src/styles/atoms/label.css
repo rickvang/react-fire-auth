@@ -1,0 +1,11 @@
+:root {
+  --label-margin: 5px;
+}
+
+.label,
+.label-inline {
+  margin-bottom: var(--label-margin);
+}
+
+.label { display: block; }
+.label-inline { display: inline-block; }

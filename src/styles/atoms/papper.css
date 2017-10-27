@@ -1,0 +1,20 @@
+:root {
+  --papper-radius: 2px;
+  --papper-paddings: 15px;
+  --papper-border: 1px solid var(--color-gray);
+}
+
+.papper {
+  width: 100%;
+  display: block;
+  padding: var(--papper-paddings);
+
+  border-radius: var(--papper-radius);
+}
+
+@media screen and (min-width: 600px) {
+  .papper {
+    background-color: white;
+    border: var(--papper-border);
+  }
+}

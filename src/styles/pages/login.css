@@ -1,0 +1,15 @@
+:root {
+  --form-width: 100%;
+  --form-width-login: 320px;
+}
+
+.form-login {
+  display: block;
+  max-width: var(--form-width);
+  width: var(--form-width-login);
+}
+
+.form-login .options {
+  padding-top: 15px;
+  font-size: .8em;
+}
