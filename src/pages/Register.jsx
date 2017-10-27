@@ -14,9 +14,7 @@ class Register extends React.Component {
 
     CreateAccount(email.value, password.value)
       .then(EmailVerication)
-      .then(() => {
-        console.log('Enviando email de verificação')
-      })
+      .then(() => this.props.history.push('/login'))
       .catch(console.log)
   }
 

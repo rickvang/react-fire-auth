@@ -21,6 +21,9 @@ export const EmailVerication = () =>
 export const CreateAccount = (email, password) =>
   auth.createUserWithEmailAndPassword(email, password)
 
+export const AuthenticateWithPassword = (email, password) =>
+  auth.signInWithEmailAndPassword(email, password)
+
 export const Authenticate = provider =>
   auth.signInWithPopup(Providers[provider])
 

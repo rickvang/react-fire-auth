@@ -2,12 +2,27 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { IoSocialGithub, IoSocialGoogle, IoSocialFacebook } from 'react-icons/lib/io'
 
+import {
+  AuthenticateWithPassword
+} from '../firebase'
+
 class Login extends React.Component {
+  handleSubmit (event) {
+    event.preventDefault()
+    const { email, password } = event.target
+
+    AuthenticateWithPassword(email.value, password.value)
+      .then(user => {
+        this.props.history.push('/users')
+      })
+      .catch(console.log)
+  }
+
   render () {
     return (
       <div className="view flex-column middle center">
         <div className="form-login papper">
-          <form method="post">
+          <form method="post" onSubmit={event => this.handleSubmit(event)}>
             <h2>Signin In</h2>
 
             <label className="field-group">

@@ -8,7 +8,7 @@
 
 ### Login, Logout and change password
 - [x] Logout
-- [ ] Login user using email and password
+- [x] Login user using email and password
 - [ ] Change password
 
 ### Link accounts
