@@ -2,9 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { IoSocialGithub, IoSocialGoogle, IoSocialFacebook } from 'react-icons/lib/io'
 
-import {
-  AuthenticateWithPassword
-} from '../firebase'
+import { AuthenticateWithPassword } from '../firebase'
+
+import Input from '../components/Input'
+import Button from '../components/Button'
+import ButtonGroup from '../components/ButtonGroup'
 
 class Login extends React.Component {
   handleSubmit (event) {
@@ -12,9 +14,7 @@ class Login extends React.Component {
     const { email, password } = event.target
 
     AuthenticateWithPassword(email.value, password.value)
-      .then(user => {
-        this.props.history.push('/users')
-      })
+      .then(user => this.props.history.push('/users'))
       .catch(console.log)
   }
 
@@ -23,19 +23,12 @@ class Login extends React.Component {
       <div className="view flex-column middle center">
         <div className="form-login papper">
           <form method="post" onSubmit={event => this.handleSubmit(event)}>
-            <h2>Signin In</h2>
+            <h2>Sign In</h2>
 
-            <label className="field-group">
-              <span className="label">E-mail</span>
-              <input className="field-input" name="email" type="email"/>
-            </label>
+            <Input label="E-mail" name="email" type="email" />
+            <Input label="Password" name="password" type="password" />
 
-            <label className="field-group">
-              <span className="label">Password</span>
-              <input className="field-input" name="password" type="password"/>
-            </label>
-
-            <button className="button" type="submit">Sign In</button>
+            <Button type="submit">Sign In</Button>
 
             <div className="options flex middle between">
               <Link to="register">Forget my password</Link>
@@ -45,11 +38,11 @@ class Login extends React.Component {
 
           <hr />
 
-          <div className="button-group">
-            <button className="button"><IoSocialGithub /></button>
-            <button className="button"><IoSocialGoogle /></button>
-            <button className="button"><IoSocialFacebook /></button>
-          </div>
+          <ButtonGroup>
+            <IoSocialGithub onClick={() => window.alert('AEEER')} />
+            <IoSocialGoogle />
+            <IoSocialFacebook />
+          </ButtonGroup>
         </div>
       </div>
     )

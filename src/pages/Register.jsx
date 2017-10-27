@@ -6,6 +6,9 @@ import {
   EmailVerication
 } from '../firebase'
 
+import Input from '../components/Input'
+import Button from '../components/Button'
+
 class Register extends React.Component {
   handleSubmit (event) {
     event.preventDefault()
@@ -23,19 +26,12 @@ class Register extends React.Component {
       <div className="view flex-column middle center">
         <div className="form-login papper">
           <form method="post" onSubmit={event => this.handleSubmit(event)}>
-            <h2>Register</h2>
+            <h2>Sign Up</h2>
 
-            <label className="field-group">
-              <span className="label">E-mail</span>
-              <input className="field-input" name="email" type="email"/>
-            </label>
+            <Input label="E-mail" name="email" type="email" />
+            <Input label="Password" name="password" type="password" />
 
-            <label className="field-group">
-              <span className="label">Password</span>
-              <input className="field-input" name="password" type="password"/>
-            </label>
-
-            <button className="button" type="submit">register</button>
+            <Button className="button" type="submit">register</Button>
 
             <div className="options flex middle between">
               <Link to="login">Sigin In</Link>
