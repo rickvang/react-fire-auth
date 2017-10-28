@@ -10,11 +10,14 @@
 - [x] Logout
 - [x] Login user using email and password
 - [x] Forget my password
-- [ ] Change password
 
 ### Link accounts
 - [x] Link accounts
 - [x] Unlink accounts
+- [x] Sigin with Github, Google or Facebook
 
-- [ ] Sigin with Github, Google or Facebook
+## Account Settings
+- [ ] Change password
+- [ ] Change display name
 - [ ] Remove account (?)
+- [ ] change profile photo (?)

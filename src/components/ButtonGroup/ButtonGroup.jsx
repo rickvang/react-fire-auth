@@ -7,7 +7,7 @@ const ButtonGroup = (props) => (
   <div className={`button-group ${props.className}`}>
     {
       props.children.map(btn =>
-        <Button key={btn.type.name} {...btn.props}>{btn}</Button>
+        <Button key={btn.key} {...btn.props}>{btn}</Button>
       )
     }
   </div>

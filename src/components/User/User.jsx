@@ -11,10 +11,6 @@ import Button from '../Button'
 
 import './styles.css'
 
-// Contas Vinculadas
-// Desvincular Conta
-// Vincular conta
-
 const findProvider = service => provider =>
   provider.providerId === service
 

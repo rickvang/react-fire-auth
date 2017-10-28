@@ -27,7 +27,7 @@ export const CreateAccount = (email, password) =>
 export const AuthenticateWithPassword = (email, password) =>
   auth.signInWithEmailAndPassword(email, password)
 
-export const Authenticate = provider =>
+export const AuthWith = provider =>
   auth.signInWithPopup(Providers[provider])
 
 export const LinkWith = provider =>
