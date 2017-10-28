@@ -9,6 +9,7 @@
 ### Login, Logout and change password
 - [x] Logout
 - [x] Login user using email and password
+- [ ] Forget my password
 - [ ] Change password
 
 ### Link accounts

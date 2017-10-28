@@ -31,7 +31,7 @@ class Login extends React.Component {
             <Button type="submit">Sign In</Button>
 
             <div className="options flex middle between">
-              <Link to="register">Forget my password</Link>
+              <Link to="recover">Forget my password</Link>
               <Link to="register">Register</Link>
             </div>
           </form>
@@ -39,7 +39,7 @@ class Login extends React.Component {
           <hr />
 
           <ButtonGroup>
-            <IoSocialGithub onClick={() => window.alert('AEEER')} />
+            <IoSocialGithub onClick={() => window.alert('trying event handler')} />
             <IoSocialGoogle />
             <IoSocialFacebook />
           </ButtonGroup>

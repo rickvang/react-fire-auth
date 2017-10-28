@@ -6,6 +6,9 @@ firebase.initializeApp(FIREBASE_SETTINGS)
 export const ref = firebase.database().ref()
 const auth = firebase.auth()
 
+// Pega o idioma do dispositivo
+auth.useDeviceLanguage()
+
 export const Providers = {
   github: new firebase.auth.GithubAuthProvider(),
   google: new firebase.auth.GoogleAuthProvider(),
@@ -46,3 +49,6 @@ export const isAuthencated = () =>
 
 export const Logout = () =>
   auth.signOut()
+
+export const resetPasswordEmail = email =>
+  auth.sendPasswordResetEmail(email)
