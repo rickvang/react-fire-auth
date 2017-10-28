@@ -1,0 +1,9 @@
+.avatar {
+  width: 70px;
+  margin: 0 auto;
+}
+
+.avatar img {
+  display: block;
+  max-width: 100%;
+}

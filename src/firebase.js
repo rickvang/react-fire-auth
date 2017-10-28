@@ -36,10 +36,13 @@ export const LinkWith = provider =>
 
 export const UnlinkFrom = provider =>
   auth.currentUser
-    .unlink(provider)
+    .unlink(`${provider}.com`)
 
 export const UserProviders = () =>
   auth.currentUser.providerData
+
+export const isLinked = service =>
+  UserProviders().find(({providerId}) => providerId === `${service}.com`)
   
 export const AuthStateChanged = callback =>
   auth.onAuthStateChanged(callback)

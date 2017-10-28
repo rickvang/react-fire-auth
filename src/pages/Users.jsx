@@ -2,8 +2,13 @@ import React from 'react'
 
 import {
   Logout,
+  isLinked,
+  LinkWith,
+  UnlinkFrom,
   AuthStateChanged
 } from '../firebase'
+
+import User from '../components/User'
 
 class Users extends React.Component {
   constructor () {
@@ -32,8 +37,9 @@ class Users extends React.Component {
     return {
       email: user.email,
       photo: user.photoURL,
-      name: user.displayName,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
+      name: user.displayName || user.email.split('@')[0],
+      providers: user.providerData
     }
   }
 
@@ -49,10 +55,15 @@ class Users extends React.Component {
     }
 
     return (
-      <div>
-        <h2>Hello {user.name || user.email.split('@')[0]}</h2>
-        <button className="button" onClick={() => Logout()}>sigin out</button>
-      </div>
+      <User
+        user={user}
+        handleSignOut={Logout}
+        handleProviders={
+          provider => isLinked(provider) 
+            ? UnlinkFrom(provider)
+            : LinkWith(provider)
+        }
+      />
     )
   }
 }

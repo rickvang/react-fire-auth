@@ -1,0 +1,28 @@
+.user-papper {
+  padding: 15px;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 0 25px rgba(0,0,0,.1);
+}
+
+.user-meta {
+  padding-left: 15px;
+}
+
+.user-meta h3 {
+  line-height: 1;
+  color: var(--color-primary);
+  font-size: var(--font-size-large);
+}
+
+.user-meta small {
+  color: var(--color-gray);
+}
+
+.user-papper .button { margin-right: 15px }
+.user-papper .button:not(:last-child):not(.is-linked) { color: #ccc; }
+
+.user-papper .button:last-child {
+  margin-right: 0;
+  margin-left: auto;
+}

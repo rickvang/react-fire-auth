@@ -38,3 +38,14 @@
   border-color: var(--button-theme-hover);
   background-color: var(--button-theme-hover);
 }
+
+.button-clean {
+  --button-theme: transparent;
+  --button-theme-hover: transparent;
+  --button-text: var(--color-primary);
+
+  border: 0;
+  width: auto;
+  padding-left: 0;
+  padding-right: 0;
+}

@@ -9,12 +9,12 @@
 ### Login, Logout and change password
 - [x] Logout
 - [x] Login user using email and password
-- [ ] Forget my password
+- [x] Forget my password
 - [ ] Change password
 
 ### Link accounts
-- [ ] Link accounts
-- [ ] Unlink accounts
+- [x] Link accounts
+- [x] Unlink accounts
 
-- [ ] Sigin with google or facebook
+- [ ] Sigin with Github, Google or Facebook
 - [ ] Remove account (?)
