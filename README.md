@@ -1,22 +1,29 @@
-# React + Firebase Auth
+# Authentication with Firebase Auth and React
 
 ## Roadmap
 
-### Register flow
+### Register a new user
+
 - [x] Register user using email and password
-- [x] Confirm e-mail
+- [ ] Confirm e-mail
 
-### Login, Logout and change password
-- [x] Logout
-- [x] Login user using email and password
-- [x] Forget my password
+### Sigin and Signout
 
-### Link accounts
-- [x] Link accounts
-- [x] Unlink accounts
-- [x] Sigin with Github, Google or Facebook
+- [ ] Logout
+- [ ] Login user using email and password
+
+### Handle account
+
+- [ ] Forget my password
+- [ ] Link accounts
+- [ ] Unlink accounts
+
+### Handle with third part signin
+
+- [ ] Sigin with Github, Google or Facebook
 
 ## Account Settings
+
 - [ ] Change password
 - [ ] Change display name
 - [ ] Remove account (?)
