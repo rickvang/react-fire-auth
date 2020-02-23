@@ -33,9 +33,17 @@ export const AuthProvider = props => {
   const register = (email, password) =>
     auth.createUserWithEmailAndPassword(email, password)
 
+  const signin = (email, password) =>
+    auth.signInWithEmailAndPassword(email, password)
+
   const signout = () => auth.signOut()
 
-  return <AuthContext.Provider value={{ user, register, signout }} {...props} />
+  return (
+    <AuthContext.Provider
+      value={{ user, register, signout, signin }}
+      {...props}
+    />
+  )
 }
 
 export const useAuth = () => useContext(AuthContext)
