@@ -9,6 +9,7 @@ import { Content } from '../components/Content'
 import { Papper } from '../components/Papper'
 import { Title, Link } from '../components/Typograph'
 import { FlexBox } from '../components/Flex'
+import { ButtonGroup } from '../components/ButtonGroup'
 
 const LoginPage = () => {
   const history = useHistory()
@@ -51,8 +52,26 @@ const LoginPage = () => {
         </form>
 
         <br />
-        {/* here if user already create an account and try to signin with google, this account is automatically linked */}
-        <Button onClick={() => signinWith('google')}>Google</Button>
+        <ButtonGroup>
+          {/* 
+            here if user already create an account and try to signin with google,
+            this account is automatically linked
+          */}
+          <Button onClick={() => signinWith('google')}>Google</Button>
+
+          {/*
+            1. here if user was already register we get the following error
+            auth/account-exists-with-different-credential.
+
+            2. if user trying to login using google provider when is already
+            registered the provider will be replaced.
+
+            @TODO: show an error for user requesting user login using another provider.
+          */}
+          <Button onClick={() => signinWith('github')}>Github</Button>
+          <Button onClick={() => signinWith('twitter')}>Twitter</Button>
+          <Button onClick={() => signinWith('facebook')}>FB</Button>
+        </ButtonGroup>
       </Papper>
     </Content>
   )

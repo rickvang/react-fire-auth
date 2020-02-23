@@ -21,9 +21,9 @@
 ### Handle with third part signin
 
 - [x] Signin with Google
-- [ ] Signin with Github
-- [ ] Signin with Facebook
-- [ ] Signin with Twitter
+- [x] Signin with Github
+- [x] Signin with Facebook
+- [x] Signin with Twitter
 
 ## Account Settings
 
