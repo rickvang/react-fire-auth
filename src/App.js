@@ -7,6 +7,7 @@ import HomePage from './pages/home'
 import UserPage from './pages/user'
 import LoginPage from './pages/login'
 import RegisterPage from './pages/register'
+import RecoverPage from './pages/recover'
 
 const App = () => (
   <>
@@ -16,6 +17,7 @@ const App = () => (
       <Route exact path="/" component={HomePage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/register" component={RegisterPage} />
+      <Route path="/recover" component={RecoverPage} />
       <Route path="/me" component={UserPage} />
 
       <Redirect to="/" />

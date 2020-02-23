@@ -14,7 +14,7 @@
 
 ### Handle account
 
-- [ ] Forget my password
+- [x] Forget my password
 - [ ] Link accounts
 - [ ] Unlink accounts
 

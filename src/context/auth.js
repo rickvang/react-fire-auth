@@ -40,9 +40,18 @@ export const AuthProvider = props => {
 
   const sendEmailVerification = () => auth.currentUser.sendEmailVerification()
 
+  const sendEmailRecover = email => auth.sendPasswordResetEmail(email)
+
   return (
     <AuthContext.Provider
-      value={{ user, register, signout, signin, sendEmailVerification }}
+      value={{
+        user,
+        register,
+        signout,
+        signin,
+        sendEmailVerification,
+        sendEmailRecover,
+      }}
       {...props}
     />
   )
