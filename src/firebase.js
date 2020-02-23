@@ -1,57 +1,45 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+
 import { FIREBASE_SETTINGS } from './constants'
 
-firebase.initializeApp(FIREBASE_SETTINGS)
+const app = firebase.initializeApp(FIREBASE_SETTINGS)
 
-export const ref = firebase.database().ref()
-const auth = firebase.auth()
+export const auth = firebase.auth(app)
 
-// Pega o idioma do dispositivo
 auth.useDeviceLanguage()
 
-export const Providers = {
-  github: new firebase.auth.GithubAuthProvider(),
-  google: new firebase.auth.GoogleAuthProvider(),
-  twitter: new firebase.auth.TwitterAuthProvider(),
-  facebook: new firebase.auth.FacebookAuthProvider(),
-}
+// export const Providers = {
+//   github: new firebase.auth.GithubAuthProvider(),
+//   google: new firebase.auth.GoogleAuthProvider(),
+//   twitter: new firebase.auth.TwitterAuthProvider(),
+//   facebook: new firebase.auth.FacebookAuthProvider(),
+// }
 
-export const EmailVerication = () =>
-  auth
-    .currentUser
-    .sendEmailVerification()
+// export const EmailVerication = () =>
+//   auth
+//     .currentUser
+//     .sendEmailVerification()
 
-export const CreateAccount = (email, password) =>
-  auth.createUserWithEmailAndPassword(email, password)
+// export const AuthWith = provider =>
+//   auth.signInWithPopup(Providers[provider])
 
-export const AuthenticateWithPassword = (email, password) =>
-  auth.signInWithEmailAndPassword(email, password)
+// export const LinkWith = provider =>
+//   auth.currentUser
+//     .linkWithPopup(Providers[provider])
 
-export const AuthWith = provider =>
-  auth.signInWithPopup(Providers[provider])
+// export const UnlinkFrom = provider =>
+//   auth.currentUser
+//     .unlink(`${provider}.com`)
 
-export const LinkWith = provider =>
-  auth.currentUser
-    .linkWithPopup(Providers[provider])
+// export const UserProviders = () =>
+//   auth.currentUser.providerData
 
-export const UnlinkFrom = provider =>
-  auth.currentUser
-    .unlink(`${provider}.com`)
+// export const isLinked = service =>
+//   UserProviders().find(({providerId}) => providerId === `${service}.com`)
 
-export const UserProviders = () =>
-  auth.currentUser.providerData
+// export const Logout = () =>
+//   auth.signOut()
 
-export const isLinked = service =>
-  UserProviders().find(({providerId}) => providerId === `${service}.com`)
-  
-export const AuthStateChanged = callback =>
-  auth.onAuthStateChanged(callback)
-
-export const isAuthencated = () =>
-  AuthStateChanged(user => user || false)
-
-export const Logout = () =>
-  auth.signOut()
-
-export const resetPasswordEmail = email =>
-  auth.sendPasswordResetEmail(email)
+// export const resetPasswordEmail = email =>
+//   auth.sendPasswordResetEmail(email)
