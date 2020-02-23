@@ -5,7 +5,7 @@
 ### Register a new user
 
 - [x] Register user using email and password
-- [ ] Confirm e-mail
+- [x] Confirm e-mail
 
 ### Sigin and Signout
 

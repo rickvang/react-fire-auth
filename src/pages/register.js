@@ -11,7 +11,7 @@ import { FlexBox } from '../components/Flex'
 
 const RegisterPage = () => {
   const history = useHistory()
-  const { user, register } = useAuth()
+  const { user, register, sendEmailVerification } = useAuth()
 
   useEffect(() => {
     /**
@@ -32,6 +32,7 @@ const RegisterPage = () => {
     const { email, password } = event.target
 
     await register(email.value, password.value)
+    await sendEmailVerification()
   }
 
   return (
