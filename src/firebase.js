@@ -19,17 +19,6 @@ export const providers = {
 
 auth.useDeviceLanguage()
 
-// export const Providers = {
-//   facebook: new firebase.auth.FacebookAuthProvider(),
-// }
-
-// export const AuthWith = provider =>
-//   auth.signInWithPopup(Providers[provider])
-
-// export const LinkWith = provider =>
-//   auth.currentUser
-//     .linkWithPopup(Providers[provider])
-
 // export const UnlinkFrom = provider =>
 //   auth.currentUser
 //     .unlink(`${provider}.com`)

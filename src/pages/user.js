@@ -6,7 +6,7 @@ import User from '../components/User'
 
 const UserPage = () => {
   const history = useHistory()
-  const { user, signout } = useAuth()
+  const { user, signout, providers, link } = useAuth()
 
   useEffect(() => {
     /**
@@ -24,7 +24,14 @@ const UserPage = () => {
     return <span>loading...</span>
   }
 
-  return <User user={user} handleSignOut={signout} />
+  return (
+    <User
+      user={user}
+      handleSignOut={signout}
+      providers={providers}
+      onProviderLink={link}
+    />
+  )
 }
 
 export default UserPage

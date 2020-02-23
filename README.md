@@ -15,7 +15,7 @@
 ### Handle account
 
 - [x] Forget my password
-- [ ] Link accounts
+- [x] Link accounts
 - [ ] Unlink accounts
 
 ### Handle with third part signin
