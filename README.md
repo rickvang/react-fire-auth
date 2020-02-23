@@ -20,7 +20,10 @@
 
 ### Handle with third part signin
 
-- [ ] Sigin with Github, Google or Facebook
+- [x] Signin with Google
+- [ ] Signin with Github
+- [ ] Signin with Facebook
+- [ ] Signin with Twitter
 
 ## Account Settings
 

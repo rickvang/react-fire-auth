@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { applySpec, prop, isNil, unless, pipe } from 'ramda'
-import { auth } from '../firebase'
+import { auth, providers } from '../firebase'
 
 const AuthContext = React.createContext()
 
@@ -42,6 +42,8 @@ export const AuthProvider = props => {
 
   const sendEmailRecover = email => auth.sendPasswordResetEmail(email)
 
+  const signinWith = provider => auth.signInWithPopup(providers[provider])
+
   return (
     <AuthContext.Provider
       value={{
@@ -49,6 +51,7 @@ export const AuthProvider = props => {
         register,
         signout,
         signin,
+        signinWith,
         sendEmailVerification,
         sendEmailRecover,
       }}

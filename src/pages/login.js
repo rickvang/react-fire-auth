@@ -12,7 +12,7 @@ import { FlexBox } from '../components/Flex'
 
 const LoginPage = () => {
   const history = useHistory()
-  const { user, signin } = useAuth()
+  const { user, signin, signinWith } = useAuth()
 
   useEffect(() => {
     /**
@@ -49,6 +49,10 @@ const LoginPage = () => {
             <Link to="register">Register</Link>
           </FlexBox>
         </form>
+
+        <br />
+        {/* here if user already create an account and try to signin with google, this account is automatically linked */}
+        <Button onClick={() => signinWith('google')}>Google</Button>
       </Papper>
     </Content>
   )
