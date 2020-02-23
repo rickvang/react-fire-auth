@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { useAuth } from '../context/auth'
 
-import Input from '../components/Input'
-import Button from '../components/Button'
+import { Field } from '../components/Input'
+import { Button } from '../components/Button'
+import { Content } from '../components/Content'
+import { Papper } from '../components/Papper'
+import { Title, Link } from '../components/Typograph'
+import { FlexBox } from '../components/Flex'
 
 const RegisterPage = () => {
   const history = useHistory()
@@ -31,24 +35,24 @@ const RegisterPage = () => {
   }
 
   return (
-    <div className="view flex-column middle center">
-      <div className="form-login papper">
+    <Content>
+      <Papper>
         <form method="post" onSubmit={handleSubmit}>
-          <h2>Sign Up</h2>
+          <Title as="h2">Sign Up</Title>
 
-          <Input label="E-mail" name="email" type="email" />
-          <Input label="Password" name="password" type="password" />
+          <Field label="E-mail" name="email" type="email" />
+          <Field label="Password" name="password" type="password" />
 
           <Button className="button" type="submit">
             register
           </Button>
 
-          <div className="options flex middle between">
+          <FlexBox align="center" justify="space-between">
             <Link to="login">Sigin In</Link>
-          </div>
+          </FlexBox>
         </form>
-      </div>
-    </div>
+      </Papper>
+    </Content>
   )
 }
 

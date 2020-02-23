@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 
 import { useAuth } from '../context/auth'
 
-import Input from '../components/Input'
-import Button from '../components/Button'
+import { Field } from '../components/Input'
+import { Button } from '../components/Button'
+import { Content } from '../components/Content'
+import { Papper } from '../components/Papper'
+import { Title, Link } from '../components/Typograph'
+import { FlexBox } from '../components/Flex'
 
 const LoginPage = () => {
   const history = useHistory()
@@ -31,25 +34,23 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="view flex-column middle center">
-      <div className="form-login papper">
+    <Content>
+      <Papper style={{ maxWidth: 300 }}>
         <form method="post" onSubmit={handleSubmit}>
-          <h2>Sign In</h2>
+          <Title as="h2">Sign In</Title>
 
-          <Input label="E-mail" name="email" type="email" />
-          <Input label="Password" name="password" type="password" />
+          <Field label="E-mail" name="email" type="email" />
+          <Field label="Password" name="password" type="password" />
 
           <Button type="submit">Sign In</Button>
 
-          <div className="options flex middle between">
+          <FlexBox align="center" justify="space-between">
             <Link to="recover">Forget my password</Link>
             <Link to="register">Register</Link>
-          </div>
+          </FlexBox>
         </form>
-
-        <hr />
-      </div>
-    </div>
+      </Papper>
+    </Content>
   )
 }
 
