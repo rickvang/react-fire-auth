@@ -1,19 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useAuth } from '../context/auth'
+
+import Button from '../components/Button'
 
 const UserPage = () => {
   const history = useHistory()
   const { user } = useAuth()
 
+  useEffect(() => {
+    /**
+     * If user not exists redirect to login
+     */
+    if (!user) {
+      history.replace('/login')
+    }
+  }, [user, history])
+
   /**
-   * If user not exists redirect to login
+   * @TODO: Add a property loader
    */
   if (!user) {
-    history.replace('/login')
+    return <span>loading...</span>
   }
 
-  return <spane>User</spane>
+  return (
+    <div>
+      <span>{user.name || user.email}</span>
+      <Button onClick={() => {}}>Sair</Button>
+    </div>
+  )
 }
 
 export default UserPage

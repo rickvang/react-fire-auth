@@ -16,7 +16,7 @@ const RegisterPage = () => {
     if (user) {
       history.replace('/me')
     }
-  }, [user])
+  }, [user, history])
 
   const handleSubmit = async event => {
     event.preventDefault()
@@ -27,7 +27,7 @@ const RegisterPage = () => {
      */
     const { email, password } = event.target
 
-    const result = await register(email.value, password.value)
+    await register(email.value, password.value)
   }
 
   return (
