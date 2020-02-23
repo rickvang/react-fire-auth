@@ -6,7 +6,7 @@ import Button from '../components/Button'
 
 const UserPage = () => {
   const history = useHistory()
-  const { user } = useAuth()
+  const { user, signout } = useAuth()
 
   useEffect(() => {
     /**
@@ -27,7 +27,7 @@ const UserPage = () => {
   return (
     <div>
       <span>{user.name || user.email}</span>
-      <Button onClick={() => {}}>Sair</Button>
+      <Button onClick={signout}>Sign Out</Button>
     </div>
   )
 }

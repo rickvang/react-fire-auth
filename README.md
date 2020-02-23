@@ -9,7 +9,7 @@
 
 ### Sigin and Signout
 
-- [ ] Logout
+- [x] Logout
 - [ ] Login user using email and password
 
 ### Handle account
