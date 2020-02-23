@@ -7,19 +7,21 @@ const app = firebase.initializeApp(FIREBASE_SETTINGS)
 
 export const auth = firebase.auth(app)
 
+/**
+ * Here we list all available providers
+ */
+export const providers = {
+  google: new firebase.auth.GoogleAuthProvider(),
+  github: new firebase.auth.GithubAuthProvider(),
+  twitter: new firebase.auth.TwitterAuthProvider(),
+  facebook: new firebase.auth.FacebookAuthProvider(),
+}
+
 auth.useDeviceLanguage()
 
 // export const Providers = {
-//   github: new firebase.auth.GithubAuthProvider(),
-//   google: new firebase.auth.GoogleAuthProvider(),
-//   twitter: new firebase.auth.TwitterAuthProvider(),
 //   facebook: new firebase.auth.FacebookAuthProvider(),
 // }
-
-// export const EmailVerication = () =>
-//   auth
-//     .currentUser
-//     .sendEmailVerification()
 
 // export const AuthWith = provider =>
 //   auth.signInWithPopup(Providers[provider])
@@ -37,9 +39,6 @@ auth.useDeviceLanguage()
 
 // export const isLinked = service =>
 //   UserProviders().find(({providerId}) => providerId === `${service}.com`)
-
-// export const Logout = () =>
-//   auth.signOut()
 
 // export const resetPasswordEmail = email =>
 //   auth.sendPasswordResetEmail(email)
